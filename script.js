@@ -75,7 +75,7 @@ function renderCart() {
   document.getElementById("cart-total").textContent = money(total + deliveryTotal);
 
   if (!cart.length) {
-    cartItems.innerHTML = `<div class="empty-cart"><span>🦆</span><p>Your bag is empty.<br>Let's find you a fresh fit!</p></div>`;
+    cartItems.innerHTML = `<div class="empty-cart"><span class="duck"></span><p>Your bag is empty.<br>Let's find you a fresh fit!</p></div>`;
     return;
   }
 
@@ -194,7 +194,7 @@ document.getElementById("order-form").addEventListener("submit", async event => 
       throw new Error(result.message || `Email service error (${response.status}).`);
     }
 
-    showStatus("Your order was sent successfully! We'll contact you soon. 🦆", "success");
+    showStatus("Your order was sent successfully! We'll contact you soon.", "success");
     showToast("Your order was submitted!");
     cart = [];
     renderCart();
